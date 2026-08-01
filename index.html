@@ -122,6 +122,9 @@
                     <button class="showcase-tab" data-target="analysis">
                         <i class="bi bi-pie-chart-fill"></i> Data Analysis Insights
                     </button>
+                    <button class="showcase-tab" data-target="finance">
+                        <i class="bi bi-wallet2"></i> Financely Dashboard
+                    </button>
                 </div>
 
                 <!-- Tabs Content -->
@@ -192,6 +195,73 @@
                         </div>
                         <div style="position: relative; height: 320px; width: 100%;">
                             <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Financely Dashboard Demo -->
+                    <div class="tab-pane" id="finance">
+                        <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h4>Financely: Premium Glassmorphic Finance Dashboard</h4>
+                                <p class="text-secondary" style="font-size: 0.9rem;">Dasbor keuangan interaktif berbasis React + Vite + Chart.js. Dilengkapi Virtual Credit Card dengan efek 3D tilt.</p>
+                            </div>
+                            <a href="https://github.com/anYoneo/finance-dashboard" target="_blank" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); border: none;">
+                                <i class="bi bi-github"></i> Repository Project
+                            </a>
+                        </div>
+                        
+                        <div class="finance-demo-grid">
+                            <!-- Virtual Card -->
+                            <div class="virtual-card-wrapper">
+                                <div class="portfolio-virtual-card">
+                                    <div class="card-shimmer"></div>
+                                    <div class="card-top">
+                                        <div class="chip">
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                        </div>
+                                        <div class="card-logo">
+                                            <i class="bi bi-globe"></i> FINANCELy
+                                        </div>
+                                    </div>
+                                    <div class="card-number">
+                                        •••• •••• •••• 4452
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="cardholder">
+                                            <div class="label">Cardholder</div>
+                                            <div class="value" id="demo-cardholder-display">M. RISZKY WIBOWO</div>
+                                        </div>
+                                        <div class="expires">
+                                            <div class="label">Expires</div>
+                                            <div class="value">08/29</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Balance Form -->
+                            <div class="glass-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; border: 1px solid var(--border-color); background: rgba(255,255,255,0.01);">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Saldo Terkumpul</span>
+                                    <span id="demo-balance" style="font-family: monospace; font-weight: 700; color: var(--accent-green); font-size: 1.25rem;">Rp 7.500.000</span>
+                                </div>
+                                <div class="form-group" style="margin: 0; gap: 0.4rem;">
+                                    <label style="font-size: 0.8rem; color: var(--text-secondary);">Nama Pemegang Kartu</label>
+                                    <input type="text" id="demo-cardholder-input" class="form-input" style="padding: 0.6rem; font-size: 0.85rem; background: rgba(15,23,42,0.5); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px; outline: none;" value="M. RISZKY WIBOWO">
+                                </div>
+                                <div style="display: flex; gap: 0.75rem; align-items: flex-end;">
+                                    <div class="form-group" style="margin: 0; flex: 1; gap: 0.4rem;">
+                                        <label style="font-size: 0.8rem; color: var(--text-secondary);">Tambah Tabungan (Rp)</label>
+                                        <input type="number" id="demo-amount-input" class="form-input" style="padding: 0.6rem; font-size: 0.85rem; background: rgba(15,23,42,0.5); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px; outline: none;" placeholder="Contoh: 500000">
+                                    </div>
+                                    <button id="btn-demo-save" class="btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; height: 38px; border-radius: 8px; border: none; background: var(--accent-blue); color: #0f172a; font-weight: 600; cursor: pointer;">
+                                        Tabung
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
