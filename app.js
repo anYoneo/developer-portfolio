@@ -300,7 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveBtn = document.getElementById('btn-demo-save');
     const virtualCard = document.querySelector('.portfolio-virtual-card');
 
-    let demoBalance = 7500000;
+    let demoBalance = parseInt(localStorage.getItem('portfolio_demo_balance') || '7500000', 10);
+    let cardholderName = localStorage.getItem('portfolio_demo_cardholder') || 'M. RISZKY WIBOWO';
 
     function formatIDR(val) {
         return new Intl.NumberFormat('id-ID', {
@@ -310,9 +311,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }).format(val);
     }
 
+    // Set initial dynamic values from persistence
+    if (balanceDisplay) balanceDisplay.textContent = formatIDR(demoBalance);
+    if (cardholderDisplay) cardholderDisplay.textContent = cardholderName.toUpperCase();
+    if (cardholderInput) cardholderInput.value = cardholderName;
+
     if (cardholderInput && cardholderDisplay) {
         cardholderInput.addEventListener('input', (e) => {
-            cardholderDisplay.textContent = e.target.value.toUpperCase() || 'M. RISZKY WIBOWO';
+            const name = e.target.value.toUpperCase() || 'M. RISZKY WIBOWO';
+            cardholderDisplay.textContent = name;
+            localStorage.setItem('portfolio_demo_cardholder', name);
         });
     }
 
@@ -325,6 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             demoBalance += val;
             balanceDisplay.textContent = formatIDR(demoBalance);
+            localStorage.setItem('portfolio_demo_balance', demoBalance);
             amountInput.value = '';
             alert("Dana sebesar " + formatIDR(val) + " berhasil disimulasikan masuk ke tabungan!");
         });
