@@ -68,6 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
             responses: [
                 "Anda dapat menghubungi Riszky melalui form kontak di bawah atau via LinkedIn di: https://www.linkedin.com/in/muhammad-riszky-wibowo/"
             ]
+        },
+        {
+            keywords: ['finance', 'financely', 'tabungan', 'uang'],
+            responses: [
+                "Financely adalah dashboard keuangan glassmorphism premium. Memiliki fitur visualisasi kartu debit, alokasi pengeluaran, tabungan berprogres, serta tren arus kas bulanan.",
+                "Proyek terbaru saya adalah Financely Dashboard yang dibangun menggunakan React + Vite + Chart.js dengan desain antarmuka glassmorphism tingkat tinggi."
+            ]
         }
     ];
 
@@ -282,6 +289,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
             alert("Pesan berhasil dikirim! Terima kasih telah menghubungi Riszky.");
             contactForm.reset();
+        });
+    }
+
+    // 6. Financely Demo Interactivity
+    const cardholderInput = document.getElementById('demo-cardholder-input');
+    const cardholderDisplay = document.getElementById('demo-cardholder-display');
+    const amountInput = document.getElementById('demo-amount-input');
+    const balanceDisplay = document.getElementById('demo-balance');
+    const saveBtn = document.getElementById('btn-demo-save');
+    const virtualCard = document.querySelector('.portfolio-virtual-card');
+
+    let demoBalance = 7500000;
+
+    function formatIDR(val) {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            maximumFractionDigits: 0
+        }).format(val);
+    }
+
+    if (cardholderInput && cardholderDisplay) {
+        cardholderInput.addEventListener('input', (e) => {
+            cardholderDisplay.textContent = e.target.value.toUpperCase() || 'M. RISZKY WIBOWO';
+        });
+    }
+
+    if (saveBtn && amountInput && balanceDisplay) {
+        saveBtn.addEventListener('click', () => {
+            const val = parseInt(amountInput.value.trim(), 10);
+            if (isNaN(val) || val <= 0) {
+                alert("Masukkan nominal angka yang valid!");
+                return;
+            }
+            demoBalance += val;
+            balanceDisplay.textContent = formatIDR(demoBalance);
+            amountInput.value = '';
+            alert("Dana sebesar " + formatIDR(val) + " berhasil disimulasikan masuk ke tabungan!");
+        });
+    }
+
+    if (virtualCard) {
+        virtualCard.addEventListener('mousemove', (e) => {
+            const rect = virtualCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((centerY - y) / centerY) * 12;
+            const rotateY = ((x - centerX) / centerX) * 12;
+            
+            virtualCard.style.transform = `scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        virtualCard.addEventListener('mouseleave', () => {
+            virtualCard.style.transform = 'scale(1) rotateX(0) rotateY(0)';
         });
     }
 });
