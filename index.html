@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad Riszky Wibowo - System Analyst & Full Stack Developer. Portofolio interaktif menampilkan keahlian dalam Laravel, Python, Database Design, dan Analisis Data.">
+    <meta name="author" content="Muhammad Riszky Wibowo">
+    <meta property="og:title" content="Muhammad Riszky Wibowo | Portofolio Developer">
+    <meta property="og:description" content="Portofolio interaktif menampilkan keahlian dalam Laravel, Python, Database Design, dan Analisis Data.">
+    <meta property="og:type" content="website">
+    <title>Muhammad Riszky Wibowo | Portofolio Interaktif</title>
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="logo">riszky.dev</div>
+            <div class="nav-links">
+                <a href="#about">Tentang</a>
+                <a href="#projects">Project</a>
+                <a href="#contact">Kontak</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero" id="about">
+            <div class="hero-content">
+                <div class="hero-subtitle">System Analyst & Developer</div>
+                <h1 class="hero-title">Membangun Solusi Modern dengan <span class="gradient-text">Kode & Data</span></h1>
+                <p class="hero-description">
+                    Halo! Saya **Muhammad Riszky Wibowo** (`anYoneo`). Saya berfokus pada perancangan arsitektur sistem yang andal, pengembangan backend berbasis **Laravel/Python**, serta pengolahan data analitik e-commerce.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#projects" class="btn-primary">
+                        Lihat Project <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhammad-riszky-wibowo/" target="_blank" class="btn-primary" style="background: rgba(255,255,255,0.05); color: var(--text-primary); border: 1px solid var(--border-color);">
+                        <i class="bi bi-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-avatar">
+                <div class="avatar-wrapper">
+                    <div class="avatar-inner">
+                        <i class="bi bi-terminal-fill"></i>
+                        <span>anYoneo</span>
+                        <small style="color: var(--accent-blue); margin-top: 5px;">Active Session</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Core Skills & Github Live Section -->
+        <section class="interactive-section">
+            <div class="section-header">
+                <h2>Keahlian & Live GitHub Stats</h2>
+                <p>Bagian ini terintegrasi dengan statistik performa kode global saya di GitHub</p>
+            </div>
+            
+            <!-- Cards Grid for Skills -->
+            <div class="card-grid">
+                <div class="glass-card">
+                    <i class="bi bi-filetype-php card-icon"></i>
+                    <h3 class="card-title">Backend Architecture</h3>
+                    <p class="card-body">Mengimplementasikan standar MVC yang aman di **Laravel 11**, database relasional MySQL terindeks, dan enkripsi data sensitif.</p>
+                </div>
+                
+                <div class="glass-card">
+                    <i class="bi bi-filetype-py card-icon" style="color: var(--accent-purple);"></i>
+                    <h3 class="card-title">NLP & Deep Learning</h3>
+                    <p class="card-body" style="color: var(--text-secondary);">Membangun chatbot cerdas client-server menggunakan **Flask + NLTK + Keras** untuk memprediksi intent pengguna secara dinamis.</p>
+                </div>
+                
+                <div class="glass-card">
+                    <i class="bi bi-bar-chart-fill card-icon" style="color: var(--accent-green);"></i>
+                    <h3 class="card-title">Data Analysis</h3>
+                    <p class="card-body">Visualisasi data transaksi e-commerce berskala besar (Brazilian Olist dataset) untuk analisis tren bisnis RFM.</p>
+                </div>
+            </div>
+
+            <!-- GitHub Live Stats Cards Integration -->
+            <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 220px; padding: 1.5rem;">
+                    <h4 class="card-title" style="margin-bottom: 1rem;"><i class="bi bi-github me-2"></i>GitHub Stats</h4>
+                    <img src="https://github-readme-stats.vercel.app/api?username=anYoneo&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a00" alt="anYoneo GitHub Stats" style="max-width: 100%; height: auto;">
+                </div>
+                
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 220px; padding: 1.5rem;">
+                    <h4 class="card-title" style="margin-bottom: 1rem;"><i class="bi bi-lightning-fill me-2"></i>GitHub Streak</h4>
+                    <img src="https://streak-stats.demolab.com/?user=anYoneo&theme=tokyonight&hide_border=true&background=0f172a00" alt="anYoneo GitHub Streak" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Section (Database visualizer, Chatbot, Charts) -->
+        <section class="interactive-section" id="projects">
+            <div class="section-header">
+                <h2>Demo Project Interaktif</h2>
+                <p>Uji coba langsung simulasi fitur dari 3 project utama saya secara real-time</p>
+            </div>
+
+            <div class="showcase-container">
+                <!-- Tabs Menu -->
+                <div class="showcase-menu">
+                    <button class="showcase-tab active" data-target="psb">
+                        <i class="bi bi-database-fill-gear"></i> PSB DB Visualizer
+                    </button>
+                    <button class="showcase-tab" data-target="chatbot">
+                        <i class="bi bi-chat-left-dots-fill"></i> NLP Chatbot Demo
+                    </button>
+                    <button class="showcase-tab" data-target="analysis">
+                        <i class="bi bi-pie-chart-fill"></i> Data Analysis Insights
+                    </button>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="showcase-content">
+                    <!-- Tab 1: PSB Schema -->
+                    <div class="tab-pane active" id="psb">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4>PSB Online Database Visualizer</h4>
+                            <p class="text-secondary" style="font-size: 0.9rem;">Klik salah satu field untuk memindai tipe data, kekangan integritas (constraints), dan kegunaannya pada system pendaftaran.</p>
+                        </div>
+                        <div class="db-visualizer">
+                            <div class="db-table">
+                                <div class="db-table-header">admins (Tabel Auth)</div>
+                                <div class="db-table-row active" data-field="admins.id"><span>id</span><span>bigint(unsigned)</span></div>
+                                <div class="db-table-row" data-field="admins.name"><span>name</span><span>varchar(100)</span></div>
+                                <div class="db-table-row" data-field="admins.username"><span>username</span><span>varchar(50)</span></div>
+                                <div class="db-table-row" data-field="admins.password"><span>password</span><span>varchar(255)</span></div>
+                                
+                                <div class="db-table-header" style="border-top: 1px solid var(--border-color)">pendaftarans (Tabel Data)</div>
+                                <div class="db-table-row" data-field="pendaftarans.nomor_pendaftaran"><span>nomor_pendaftaran</span><span>varchar(20)</span></div>
+                                <div class="db-table-row" data-field="pendaftarans.status"><span>status</span><span>enum</span></div>
+                                <div class="db-table-row" data-field="pendaftarans.kecamatan_id"><span>kecamatan_id</span><span>bigint(unsigned)</span></div>
+                            </div>
+                            
+                            <div class="db-detail-pane">
+                                <h5>Detail Field: <span id="detail-field-title" style="color: var(--text-primary)">admins.id</span></h5>
+                                <hr style="border: 0; border-top: 1px solid var(--border-color); margin-bottom: 1rem;">
+                                <ul>
+                                    <li><span class="label">Tipe Data:</span> <span id="detail-type" style="font-family: monospace">bigint unsigned</span></li>
+                                    <li><span class="label">Boleh Null:</span> <span id="detail-null">NO</span></li>
+                                    <li><span class="label">Index Key:</span> <span id="detail-key" style="font-weight: 600; color: var(--accent-purple)">PRI</span></li>
+                                    <li><span class="label">Nilai Default:</span> <span id="detail-default" style="font-family: monospace">NULL</span></li>
+                                    <li><span class="label">Keterangan:</span> <p id="detail-desc" style="color: var(--text-secondary); margin-top: 5px; line-height: 1.5">Primary key untuk tabel administrator.</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Chatbot Widget -->
+                    <div class="tab-pane" id="chatbot">
+                        <div style="margin-bottom: 1.5rem; text-align: center;">
+                            <h4>Asisten Chatbot NLP (Simulasi NLTK)</h4>
+                            <p class="text-secondary" style="font-size: 0.9rem;">Chatbot berbasis kata kunci pencarian intents yang sama dengan repositori python/flask saya.</p>
+                        </div>
+                        
+                        <div class="chatbot-widget">
+                            <div class="chat-header">
+                                <div class="chat-status"></div>
+                                <span style="font-weight: 600; font-size: 0.95rem;">nlp_bot_assistant</span>
+                            </div>
+                            <div class="chat-messages" id="chat-messages">
+                                <div class="message bot">
+                                    Halo! Saya asisten virtual Riszky. Silakan tanyakan hal-hal mengenai 'Riszky', 'project', atau 'keahlian'.
+                                </div>
+                            </div>
+                            <form class="chat-input-area" id="chat-form">
+                                <input type="text" id="chat-input" placeholder="Ketik pesan di sini..." autocomplete="off">
+                                <button type="submit"><i class="bi bi-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Data Analysis Live Charts -->
+                    <div class="tab-pane" id="analysis">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4>Brazilian E-Commerce (Olist Insights)</h4>
+                            <p class="text-secondary" style="font-size: 0.9rem;">Visualisasi persentase transaksi metode pembayaran berdasarkan hasil pengolahan data e-commerce di Python.</p>
+                        </div>
+                        <div style="position: relative; height: 320px; width: 100%;">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; text-align: center;">Hubungi Saya</h3>
+            <p style="color: var(--text-secondary); text-align: center; margin-bottom: 2rem; font-size: 0.95rem;">Ada ide kolaborasi atau ingin berdiskusi? Kirim pesan Anda di bawah ini</p>
+            
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label>Alamat Email</label>
+                    <input type="email" id="email" placeholder="nama@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Pesan</label>
+                    <textarea id="msg" rows="4" placeholder="Tulis pesan atau pertanyaan Anda..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">
+                    Kirim Pesan <i class="bi bi-send-fill"></i>
+                </button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Muhammad Riszky Wibowo. Built with Passion, HTML, CSS, and JS.</p>
+        </footer>
+    </div>
+
+    <!-- Custom App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
