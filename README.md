@@ -2,7 +2,7 @@
 
 > A beautiful, responsive, and highly interactive developer portfolio built for **Muhammad Riszky Wibowo** (`anYoneo`) using modern HTML5, vanilla CSS3 gradients, glassmorphic card layouts, and vanilla JavaScript.
 >
-> This portfolio is designed to highlight GitHub stats and directly simulate interactive features from Riszky's three primary repositories.
+> This portfolio is designed to highlight GitHub stats and directly simulate interactive features from Riszky's industrial-grade projects.
 
 ---
 
@@ -17,10 +17,17 @@
 - Live statistics cards mapping total stars, commits, PRs, and language percentages.
 - Live GitHub contribution streak visualizer.
 
-### 3. 🔍 Interactive Showcases (Live Simulators)
-- **PSB Online Database Visualizer**: Interactive schema table where users can click database fields (e.g. `pendaftarans.nomor_pendaftaran`, `admins.password`) to see column constraints (type, key, default) and explanatory notes (e.g. Bcrypt hashing explanations).
-- **NLP Chatbot Simulator**: Fully working mockup client-side chatbot responding to inquiries about the developer, skills, projects, and contact info, matching intent keywords in NLTK model style.
-- **Data Analysis Insights**: Interactive payment method distributions visualizer powered by **Chart.js** displaying Brazilian Olist e-commerce insights.
+### 3. 🛡️ Industrial Engineering Practices
+- **Security First**: Implementasi bcrypt, CSRF protection, SQL injection prevention, dan Rate limiting.
+- **Containerization**: Docker & Docker Compose setup di seluruh project.
+- **CI/CD & Testing**: Integrasi GitHub Actions dengan PHPUnit dan Jest untuk automated testing.
+- **Observability**: Health check endpoints dan structured JSON logging.
+
+### 4. 🔍 Interactive Showcases (Live Simulators)
+- **🎓 PSB Online v2 (Maturity: Level 4)**: Rebuilt with Laravel 11, Eloquent ORM, Docker, CI/CD.
+- **💳 Financely v2 (Maturity: Level 3.5)**: Modular React, Express.js REST API, JWT auth, Zod.
+- **🤖 NLP Chatbot (Maturity: Level 3)**: Flask + NLTK + Keras dengan input sanitization & Docker.
+- **📊 E-Commerce Data Analysis (Maturity: Level 1.5)**: Analisis data Olist menggunakan Pandas & Streamlit.
 
 ---
 
