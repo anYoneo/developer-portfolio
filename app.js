@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Add active states to clicked tab and corresponding pane
             tab.classList.add('active');
-            document.getElementById(target).classList.add('active');
+            const targetPane = document.getElementById(target);
+            if (targetPane) targetPane.classList.add('active');
 
             // Handle special tab initializations
             if (target === 'analysis' && !window.salesChart) {
@@ -40,15 +41,21 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             keywords: ['siapa', 'riszky', 'owner'],
             responses: [
-                "Muhammad Riszky Wibowo adalah seorang System Analyst & Full Stack Developer yang berfokus pada Laravel, Python, dan arsitektur database.",
-                "Riszky adalah pencipta portofolio ini, ia berpengalaman dalam pengembangan sistem informasi sekolah, integrasi Odoo, dan NLP."
+                "Muhammad Riszky Wibowo adalah seorang System Analyst & Software Engineer yang berfokus pada NestJS, Laravel, Python, dan arsitektur database.",
+                "Riszky berpengalaman dalam pengembangan sistem pencocokan keuangan 3-Way Match, integrasi Odoo, dan NLP."
+            ]
+        },
+        {
+            keywords: ['verimatch', 'matching', 'audit', '3way', 'po'],
+            responses: [
+                "VeriMatch Enterprise adalah platform intelligence 3-Way Matching (PO vs GRN vs Invoice) 4-pillar presisi tinggi dengan Risk Scoring 5-faktor dan SHA-256 Audit Trail."
             ]
         },
         {
             keywords: ['project', 'portofolio', 'aplikasi'],
             responses: [
-                "Proyek utama yang ditampilkan di sini meliputi: 1) PSB Online (Laravel 11), 2) NLP Chatbot (Python/Flask), dan 3) Brazilian E-Commerce Data Analysis.",
-                "Ada 3 proyek unggulan di GitHub Riszky: PSB Online, Chatbot NLP, dan Analisis Data Brazilian E-Commerce."
+                "Proyek utama yang ditampilkan meliputi: 1) VeriMatch Enterprise (NestJS & PostgreSQL), 2) PSB Online (Laravel 11), 3) NLP Chatbot (Python/Flask), dan 4) Financely v2.",
+                "Ada proyek unggulan di GitHub Riszky: VeriMatch Enterprise, PSB Online, Chatbot NLP, dan Analisis Data E-Commerce."
             ]
         },
         {
@@ -60,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             keywords: ['analisis', 'data', 'ecommerce', 'olist'],
             responses: [
-                " Brazilian E-Commerce Analysis menganalisis dataset Olist (Kaggle) menggunakan Pandas, Matplotlib, dan Seaborn untuk mendapatkan insights RFM dan tren pembayaran."
+                "Brazilian E-Commerce Analysis menganalisis dataset Olist (Kaggle) menggunakan Pandas, Matplotlib, dan Seaborn untuk mendapatkan insights RFM dan tren pembayaran."
             ]
         },
         {
@@ -72,8 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             keywords: ['finance', 'financely', 'tabungan', 'uang'],
             responses: [
-                "Financely adalah dashboard keuangan glassmorphism premium. Memiliki fitur visualisasi kartu debit, alokasi pengeluaran, tabungan berprogres, serta tren arus kas bulanan.",
-                "Proyek terbaru saya adalah Financely Dashboard yang dibangun menggunakan React + Vite + Chart.js dengan desain antarmuka glassmorphism tingkat tinggi."
+                "Financely adalah dashboard keuangan glassmorphism premium dengan visualisasi kartu debit interaktif dan alokasi pengeluaran."
             ]
         }
     ];
@@ -87,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        return "Maaf, saya tidak mengerti maksud Anda. Anda bisa menanyakan tentang 'owner', 'project', 'PSB', atau 'analisis data'.";
+        return "Maaf, saya tidak mengerti maksud Anda. Anda bisa menanyakan tentang 'owner', 'VeriMatch', 'project', 'PSB', atau 'analisis data'.";
     }
 
     function appendMessage(text, sender) {
@@ -107,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage(text, 'user');
             chatInput.value = '';
 
-            // Simulate bot typing delay
             setTimeout(() => {
                 const response = getBotResponse(text);
                 appendMessage(response, 'bot');
@@ -311,7 +316,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }).format(val);
     }
 
-    // Set initial dynamic values from persistence
     if (balanceDisplay) balanceDisplay.textContent = formatIDR(demoBalance);
     if (cardholderDisplay) cardholderDisplay.textContent = cardholderName.toUpperCase();
     if (cardholderInput) cardholderInput.value = cardholderName;
