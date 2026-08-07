@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammad Riszky Wibowo - System Analyst & Software Engineer. Portofolio interaktif menampilkan keahlian dalam Laravel, Express.js, Python, Database Design, dan Analisis Data.">
+    <meta name="description" content="Muhammad Riszky Wibowo - System Analyst & Software Engineer. Portofolio interaktif menampilkan keahlian dalam NestJS, Laravel, Express.js, Python, Database Design, dan 3-Way Matching Platform.">
     <meta name="author" content="Muhammad Riszky Wibowo">
     <meta property="og:title" content="Muhammad Riszky Wibowo | Portofolio Developer">
     <meta property="og:description" content="Portofolio interaktif menampilkan proyek rekayasa perangkat lunak modern, arsitektur backend, dan analisis data.">
@@ -38,7 +38,7 @@
                 <div class="hero-subtitle">Software Engineer & System Analyst</div>
                 <h1 class="hero-title">Merancang Sistem Modern dengan <span class="gradient-text">Kode & Data</span></h1>
                 <p class="hero-description">
-                    Halo! Saya <strong>Muhammad Riszky Wibowo</strong> (<code>anYoneo</code>). Saya berfokus merancang aplikasi yang aman, teruji, dan mudah dipelihara. Berpengalaman membangun backend dengan <strong>Laravel</strong> & <strong>Express.js</strong>, frontend <strong>React</strong>, serta pengolahan data menggunakan <strong>Python</strong>.
+                    Halo! Saya <strong>Muhammad Riszky Wibowo</strong> (<code>anYoneo</code>). Saya berfokus merancang aplikasi yang aman, teruji, dan mudah dipelihara. Berpengalaman membangun backend dengan <strong>NestJS</strong>, <strong>Laravel</strong> & <strong>Express.js</strong>, frontend <strong>React</strong>, serta platform intelligence finansial.
                 </p>
                 <div style="display: flex; gap: 1rem;">
                     <a href="#projects" class="btn-primary">
@@ -100,7 +100,7 @@
                 <div class="glass-card">
                     <i class="bi bi-filetype-php card-icon"></i>
                     <h3 class="card-title">Backend Architecture</h3>
-                    <p class="card-body">Pengembangan RESTful API dan sistem backend menggunakan <strong>Laravel 11</strong> & <strong>Node.js/Express</strong> dengan relasi database MySQL yang terindeks rapi.</p>
+                    <p class="card-body">Pengembangan RESTful API dan sistem backend menggunakan <strong>NestJS</strong>, <strong>Laravel 11</strong> & <strong>Node.js/Express</strong> dengan relasi database PostgreSQL & MySQL yang terindeks rapi.</p>
                 </div>
                 
                 <div class="glass-card">
@@ -140,7 +140,10 @@
             <div class="showcase-container">
                 <!-- Tabs Menu -->
                 <div class="showcase-menu">
-                    <button class="showcase-tab active" data-target="psb">
+                    <button class="showcase-tab active" data-target="verimatch">
+                        <i class="bi bi-shield-check"></i> VeriMatch Enterprise
+                    </button>
+                    <button class="showcase-tab" data-target="psb">
                         <i class="bi bi-database-fill-gear"></i> PSB Online v2
                     </button>
                     <button class="showcase-tab" data-target="chatbot">
@@ -156,8 +159,40 @@
 
                 <!-- Tabs Content -->
                 <div class="showcase-content">
+
+                    <!-- Tab 0: VeriMatch Enterprise -->
+                    <div class="tab-pane active" id="verimatch">
+                        <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h4>⚡ VeriMatch Enterprise — Procurement Intelligence & Financial Control Platform</h4>
+                                <p class="text-secondary" style="font-size: 0.9rem;">Engine 3-Way Matching 4-Pillar presisi tinggi (PO vs GRN vs Invoice) dengan Transparent Decision Explanation Engine (Risk Scoring), Universal Search, REST API NestJS, PostgreSQL 16, dan Docker. <a href="https://github.com/anYoneo/verimatch" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Lihat Repository GitHub</a></p>
+                            </div>
+                            <a href="https://github.com/anYoneo/verimatch" target="_blank" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); border: none;">
+                                <i class="bi bi-github"></i> Repository Project
+                            </a>
+                        </div>
+                        
+                        <div class="glass-card" style="padding: 1.5rem; border: 1px solid var(--border-color); background: rgba(15,23,42,0.6);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Auto-Approve Rate</div>
+                                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-green);">94.2%</div>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Leakage Savings</div>
+                                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-blue);">$142,850.00</div>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                                    <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Compliance Audit</div>
+                                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-purple);">SHA-256 Ledger</div>
+                                </div>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Highlight Utama: Mencegah kebocoran tagihan berlebih (over-billing) dan selisih penerimaan barang gudang dengan perhitungan 5 faktor risiko keuangan & visualisasi 3 dokumen berdampingan.</p>
+                        </div>
+                    </div>
+
                     <!-- Tab 1: PSB Schema -->
-                    <div class="tab-pane active" id="psb">
+                    <div class="tab-pane" id="psb">
                         <div style="margin-bottom: 1.5rem;">
                             <h4>🎓 PSB Online v2 — Sistem Pendaftaran Sekolah</h4>
                             <p class="text-secondary" style="font-size: 0.9rem;">Sistem penerimaan siswa baru berbasis Laravel 11. Dilengkapi autentikasi terenskripsi, sistem peran (RBAC), pengujian otomatis PHPUnit, serta dukungan Docker. <a href="https://github.com/anYoneo/Project-Scrud-HTML-PHP" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Lihat Repository GitHub</a></p>
