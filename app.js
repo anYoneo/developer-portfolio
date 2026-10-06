@@ -363,3 +363,124 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/* Personal Diary OS — interactive showcase.
+   Everything here runs locally in the browser: word/char counts are real
+   measurements of the textarea, autosave is a simulation. */
+(function () {
+    function ready(fn) {
+        if (document.readyState !== 'loading') fn();
+        else document.addEventListener('DOMContentLoaded', fn);
+    }
+
+    ready(function () {
+        var input = document.getElementById('diary-input');
+        if (!input) return;
+
+        var statusEl = document.getElementById('diary-status');
+        var wordsEl = document.getElementById('diary-words');
+        var charsEl = document.getElementById('diary-chars');
+        var verEl = document.getElementById('diary-version');
+        var nodes = document.querySelectorAll('.diary-node');
+
+        var revision = 1;
+        var timer = null;
+
+        function setStatus(text, cls) {
+            statusEl.textContent = text;
+            statusEl.className = 'diary-status' + (cls ? ' ' + cls : '');
+        }
+
+        function measure() {
+            var text = input.value;
+            var trimmed = text.trim();
+            wordsEl.textContent = trimmed ? trimmed.split(/\s+/).length : 0;
+            charsEl.textContent = text.length;
+        }
+
+        function lightNodes() {
+            var low = input.value.toLowerCase();
+            nodes.forEach(function (node) {
+                var word = node.getAttribute('data-word');
+                if (word) node.classList.toggle('lit', low.indexOf(word) !== -1);
+            });
+        }
+
+        function commit() {
+            setStatus('menyimpan…', 'saving');
+            timer = setTimeout(function () {
+                revision += 1;
+                verEl.textContent = revision;
+                setStatus('tersimpan', '');
+                lightNodes();
+            }, 400);
+        }
+
+        input.addEventListener('input', function () {
+            measure();
+            lightNodes();
+            clearTimeout(timer);
+            setStatus('mengetik…', 'typing');
+            timer = setTimeout(commit, 700);
+        });
+
+        input.addEventListener('keydown', function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+                e.preventDefault();
+                clearTimeout(timer);
+                commit();
+            }
+        });
+
+        nodes.forEach(function (node) {
+            node.addEventListener('click', function () {
+                var word = node.getAttribute('data-word');
+                if (!word) return;
+                var start = input.selectionStart == null ? input.value.length : input.selectionStart;
+                var before = input.value.slice(0, start);
+                var pad = before.length === 0 || /\s$/.test(before) ? '' : ' ';
+                var insert = pad + word + ' ';
+                input.value = before + insert + input.value.slice(start);
+                var caret = start + insert.length;
+                input.focus();
+                input.setSelectionRange(caret, caret);
+                input.dispatchEvent(new Event('input'));
+            });
+        });
+
+        measure();
+        lightNodes();
+
+        /* Reveal the stat numbers with a short count-up when the tab opens.
+           Targets come straight from the markup, so the animation can never
+           show a figure the page does not already claim. */
+        var statsDone = false;
+        function diaryCountUp() {
+            if (statsDone) return;
+            statsDone = true;
+            document.querySelectorAll('.diary-stat .v').forEach(function (el) {
+                var m = /^(\d+(?:\.\d+)?)(.*)$/.exec(el.textContent.trim());
+                if (!m) return;
+                var target = parseFloat(m[1]);
+                var suffix = m[2] || '';
+                var decimals = (m[1].split('.')[1] || '').length;
+                var start = null;
+                var DURATION = 900;
+                function step(ts) {
+                    if (start === null) start = ts;
+                    var p = Math.min((ts - start) / DURATION, 1);
+                    var eased = 1 - Math.pow(1 - p, 3);
+                    el.textContent = (target * eased).toFixed(decimals) + suffix;
+                    if (p < 1) requestAnimationFrame(step);
+                    else el.textContent = target.toFixed(decimals) + suffix;
+                }
+                el.textContent = (0).toFixed(decimals) + suffix;
+                if (typeof requestAnimationFrame === 'function') requestAnimationFrame(step);
+                else el.textContent = target.toFixed(decimals) + suffix;
+            });
+        }
+
+        var diaryTab = document.querySelector('.showcase-tab[data-target="diary"]');
+        if (diaryTab) diaryTab.addEventListener('click', diaryCountUp);
+    });
+})();

@@ -155,10 +155,90 @@
                     <button class="showcase-tab" data-target="finance">
                         <i class="bi bi-wallet2"></i> Financely v2
                     </button>
+                    <button class="showcase-tab" data-target="diary">
+                        <i class="bi bi-journal-bookmark-fill"></i> Personal Diary OS
+                    </button>
                 </div>
 
                 <!-- Tabs Content -->
                 <div class="showcase-content">
+
+                    <!-- Tab 5: Personal Diary OS -->
+                    <div class="tab-pane" id="diary">
+                        <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h4>📔 Personal Diary OS — Diary Pribadi yang Anda Hosting Sendiri</h4>
+                                <p class="text-secondary" style="font-size: 0.9rem;">Diary markdown-native di server sendiri: editor autosave yang tidak menghilangkan ketikan, timeline, memory graph, multi-user invite-only dengan isolasi data per pengguna, dan penangkapan pesan Discord. <a href="https://github.com/anYoneo/personal-diary-os" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Lihat Repository GitHub</a></p>
+                            </div>
+                            <a href="https://github.com/anYoneo/personal-diary-os" target="_blank" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); border: none;">
+                                <i class="bi bi-github"></i> Repository Project
+                            </a>
+                        </div>
+
+                        <div class="diary-stats">
+                            <div class="diary-stat"><div class="k">Autosave (median)</div><div class="v" style="color: var(--accent-green);">101 ms</div></div>
+                            <div class="diary-stat"><div class="k">Waktu Login</div><div class="v" style="color: var(--accent-blue);">239 ms</div></div>
+                            <div class="diary-stat"><div class="k">Ketikan Hilang</div><div class="v" style="color: var(--accent-purple);">0</div></div>
+                            <div class="diary-stat"><div class="k">Query Per-User Terscope</div><div class="v" style="color: #818CF8;">130</div></div>
+                        </div>
+
+                        <div class="glass-card" style="padding: 1.5rem; border: 1px solid var(--border-color); background: rgba(15,23,42,0.6);">
+                            <div class="diary-demo-grid">
+                                <div class="diary-editor">
+                                    <div class="diary-editor-bar">
+                                        <span class="diary-dot"></span><span class="diary-dot"></span><span class="diary-dot"></span>
+                                        <span class="diary-file">2026-10-06.md</span>
+                                        <span class="diary-status" id="diary-status">tersimpan</span>
+                                    </div>
+                                    <textarea id="diary-input" spellcheck="false" aria-label="Contoh entri diary">Hari ini aplikasi diary-nya akhirnya jalan mulus.
+Login yang tadinya 23 detik sekarang di bawah satu detik, dan autosave nggak pernah menghilangkan ketikan lagi.
+
+Catatan kecil: coba ketik "kopi" atau "deadline" di sini — node di memory graph akan menyala sendiri.</textarea>
+                                    <div class="diary-counter">
+                                        <span><b id="diary-words">0</b> kata</span>
+                                        <span><b id="diary-chars">0</b> karakter</span>
+                                        <span>revisi ke-<b id="diary-version">1</b></span>
+                                        <span style="margin-left: auto; color: var(--text-secondary); opacity: 0.75;">Ctrl+S untuk simpan</span>
+                                    </div>
+                                </div>
+
+                                <div class="diary-side">
+                                    <div class="diary-side-title">Memory Graph</div>
+                                    <svg class="diary-graph" viewBox="0 0 320 190" role="img" aria-label="Memory graph dari entri diary">
+                                        <line x1="160" y1="95" x2="62" y2="42"></line>
+                                        <line x1="160" y1="95" x2="258" y2="40"></line>
+                                        <line x1="160" y1="95" x2="70" y2="148"></line>
+                                        <line x1="160" y1="95" x2="250" y2="150"></line>
+                                        <g class="diary-node" data-word="hari ini">
+                                            <circle cx="160" cy="95" r="20"></circle>
+                                            <text x="160" y="130">hari ini</text>
+                                        </g>
+                                        <g class="diary-node" data-word="kopi">
+                                            <circle cx="62" cy="42" r="12"></circle>
+                                            <text x="62" y="66">kopi</text>
+                                        </g>
+                                        <g class="diary-node" data-word="deadline">
+                                            <circle cx="258" cy="40" r="12"></circle>
+                                            <text x="258" y="64">deadline</text>
+                                        </g>
+                                        <g class="diary-node" data-word="kuliah">
+                                            <circle cx="70" cy="148" r="12"></circle>
+                                            <text x="70" y="172">kuliah</text>
+                                        </g>
+                                        <g class="diary-node" data-word="besok">
+                                            <circle cx="250" cy="150" r="12"></circle>
+                                            <text x="250" y="174">besok</text>
+                                        </g>
+                                    </svg>
+                                    <p class="diary-hint">Klik sebuah node untuk menyisipkannya ke entri. Node menyala saat katanya benar-benar ada di teks Anda.</p>
+                                </div>
+                            </div>
+
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 1rem 0 0;">Highlight: menyelesaikan dua cacat yang membuat tulisan pengguna hilang — save bersamaan yang saling menimpa, dan cermin draf lokal yang berhenti bekerja setelah entri punya id. Lambatnya login juga dilacak sampai akarnya: <code>PRAGMA synchronous=FULL</code> memaksa fsync ~2,7 detik per commit.</p>
+                            <p style="font-size: 0.78rem; color: var(--text-secondary); opacity: 0.8; margin: 0.6rem 0 0;"><i class="bi bi-info-circle"></i> Demo di atas berjalan lokal di browser Anda (hitungan kata asli dari teks Anda, autosave disimulasikan). Aplikasi aslinya privat dan berjalan di server sendiri dengan akses undangan.</p>
+                        </div>
+                    </div>
+
 
                     <!-- Tab 0: VeriMatch Enterprise -->
                     <div class="tab-pane active" id="verimatch">
