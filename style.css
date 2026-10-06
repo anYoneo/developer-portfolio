@@ -227,6 +227,10 @@ nav {
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 0;
+    /* The card has overflow:hidden, so this layer is its own containing block and
+       ends up taller than the card itself, sitting over the controls inside it.
+       It is decoration only, so it must never receive pointer events. */
+    pointer-events: none;
 }
 
 .glass-card:hover {

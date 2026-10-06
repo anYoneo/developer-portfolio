@@ -385,6 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         var revision = 1;
         var timer = null;
+        var everFocused = false;
+        input.addEventListener('focus', function () { everFocused = true; });
 
         function setStatus(text, cls) {
             statusEl.textContent = text;
@@ -436,7 +438,12 @@ document.addEventListener('DOMContentLoaded', () => {
             node.addEventListener('click', function () {
                 var word = node.getAttribute('data-word');
                 if (!word) return;
-                var start = input.selectionStart == null ? input.value.length : input.selectionStart;
+                /* Until the visitor has put a caret in the editor, "insert at the
+                   caret" would silently prepend to the top of the text and look
+                   like nothing happened. Append at the end instead. */
+                var start = everFocused && input.selectionStart != null
+                    ? input.selectionStart
+                    : input.value.length;
                 var before = input.value.slice(0, start);
                 var pad = before.length === 0 || /\s$/.test(before) ? '' : ' ';
                 var insert = pad + word + ' ';
