@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             keywords: ['siapa', 'riszky', 'owner'],
             responses: [
-                "Muhammad Riszky Wibowo adalah seorang System Analyst & Software Engineer yang berfokus pada NestJS, Laravel, Python, dan arsitektur database.",
+                "Muhammad Riszky Wibowo adalah seorang System Analyst & AI Engineer yang berfokus pada NestJS, Laravel, Python, dan arsitektur database.",
                 "Riszky berpengalaman dalam pengembangan sistem pencocokan keuangan 3-Way Match, integrasi Odoo, dan NLP."
             ]
         },
@@ -708,4 +708,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 })();
+
 
