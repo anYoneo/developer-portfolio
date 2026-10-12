@@ -46,6 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
+                    {
+            keywords: ['alphadigest', 'swarm', 'saham', 'idx', 'bei', 'agen', 'financial', 'dcf', 'investasi'],
+            responses: [
+                "AlphaDigest adalah Autonomous IDX Financial Intelligence Swarm buatan Riszky: 8 agen AI spesialis yang memantau & menganalisis laporan keuangan BEI secara adaptif (10 sektor), valuasi DCF 3-stage, dan integrasi Obsidian.",
+                "AlphaDigest mengadopsi 3-Layer Extraction Framework: Core Financials, KPI Operasional Sektoral (NIM/NPL/Strip Ratio), dan Intelegensi Kualitatif Catatan Kaki/Auditor bebas halusinasi."
+            ]
+        },
+        {
             keywords: ['verimatch', 'matching', 'audit', '3way', 'po'],
             responses: [
                 "VeriMatch Enterprise adalah platform intelligence 3-Way Matching (PO vs GRN vs Invoice) 4-pillar presisi tinggi dengan Risk Scoring 5-faktor dan SHA-256 Audit Trail."
@@ -54,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             keywords: ['project', 'portofolio', 'aplikasi'],
             responses: [
-                "Proyek utama yang ditampilkan meliputi: 1) VeriMatch Enterprise (NestJS & PostgreSQL), 2) PSB Online (Laravel 11), 3) NLP Chatbot (Python/Flask), dan 4) Financely v2.",
+                "Proyek unggulan yang ditampilkan meliputi: 1) AlphaDigest (Autonomous IDX Multi-Agent Swarm), 2) VeriMatch Enterprise (NestJS & PostgreSQL), 3) Personal Diary OS, 4) PSB Online, dan 5) Financely v2.",
                 "Ada proyek unggulan di GitHub Riszky: VeriMatch Enterprise, PSB Online, Chatbot NLP, dan Analisis Data E-Commerce."
             ]
         },
@@ -489,5 +497,215 @@ document.addEventListener('DOMContentLoaded', () => {
 
         var diaryTab = document.querySelector('.showcase-tab[data-target="diary"]');
         if (diaryTab) diaryTab.addEventListener('click', diaryCountUp);
-    });
+    
+    // 7. AlphaDigest Interactive Swarm Sector Inspector
+    const swarmSectorData = {
+        'banking': {
+            name: 'Perbankan & Multifinance',
+            tickers: 'BBCA, BBRI, BMRI, BBNI',
+            status: '● 3-Layer Verified (OJK/BEI)',
+            agents: ['🔍 IDX Scraper', '📄 3-Layer Extractor', '📊 Bank Summarizer', '📈 3-Stage DCF', '⚠️ Risk & QC Sign'],
+            core: {
+                rev: 'Rp 112,4 Triliun (+12.4% YoY)',
+                profit: 'Rp 54,8 Triliun (+14.1% YoY)',
+                fcf: 'Rp 68,2 Triliun (+9.8%)'
+            },
+            kpis: [
+                { label: 'Net Interest Margin (NIM)', val: '5.8% (Optimal)' },
+                { label: 'NPL Gross / Net', val: '1.9% / 0.6% (Sehat)' },
+                { label: 'CASA Ratio', val: '81.4% (Tinggi)' },
+                { label: 'Capital Adequacy (CAR)', val: '27.3% (Sangat Kuat)' },
+                { label: 'Cost of Funds (CoF)', val: '2.1% (Efisien)' }
+            ],
+            qualitative: {
+                auditor: 'Wajar Tanpa Pengecualian (WTP) - Big 4',
+                governance: 'Model ECL PSAK 71 memadai, Coverage ratio > 220%',
+                guidance: 'Target loan growth 10-12%, payout dividen 70%+'
+            },
+            valuation: {
+                fairValue: 'Rp 11.200 / saham',
+                marketPrice: 'Rp 9.850',
+                mos: '+13.7%',
+                signal: '🟢 UNDERVALUED'
+            }
+        },
+        'mining': {
+            name: 'Pertambangan & Logam',
+            tickers: 'ANTM, PTBA, BYAN, AMMN',
+            status: '● 3-Layer Verified (ESDM/BEI)',
+            agents: ['🔍 IDX Scraper', '📄 Commodity Extractor', '⛏️ Mining Specialist', '📈 Multiple DCF', '🌿 ESG & QC Sign'],
+            core: {
+                rev: 'Rp 48,6 Triliun (+8.2% YoY)',
+                profit: 'Rp 11,3 Triliun (+18.5% YoY)',
+                fcf: 'Rp 14,7 Triliun (+21.0%)'
+            },
+            kpis: [
+                { label: 'Volume Produksi Batubara / Bijih', val: '41,2 Juta Ton (Target Met)' },
+                { label: 'Cash Cost per Ton', val: '$44.8 / ton (Low-Quartile)' },
+                { label: 'Average Selling Price (ASP)', val: '$88.5 / ton (Positive)' },
+                { label: 'Stripping Ratio', val: '4.8x bcm/ton (Normal)' },
+                { label: 'Proven Ore Reserves', val: '318 Mton (Long-Life Mine)' }
+            ],
+            qualitative: {
+                auditor: 'Wajar Tanpa Pengecualian (WTP)',
+                governance: 'Kepatuhan DMO 100%, dana jaminan reklamasi telah dialokasikan',
+                guidance: 'Progres smelter HPAL fase 2 mencapai 78% COD Q3'
+            },
+            valuation: {
+                fairValue: 'Rp 2.450 / saham',
+                marketPrice: 'Rp 1.780',
+                mos: '+37.6%',
+                signal: '🟢 UNDERVALUED (Strong Buy)'
+            }
+        },
+        'property': {
+            name: 'Properti & Kawasan',
+            tickers: 'PANI, BSDE, CTRA, SMRA',
+            status: '● 3-Layer Verified (ATR/BPN/BEI)',
+            agents: ['🔍 IDX Scraper', '📄 Landbank Extractor', '🏢 Property Analyst', '📈 NAV/DCF Engine', '⚠️ Credit Risk Sign'],
+            core: {
+                rev: 'Rp 14,2 Triliun (+24.1% YoY)',
+                profit: 'Rp 3,8 Triliun (+31.0% YoY)',
+                fcf: 'Rp 4,1 Triliun (+15.2%)'
+            },
+            kpis: [
+                { label: 'Marketing Sales / Presales', val: 'Rp 9,8 Triliun (Top-Tier)' },
+                { label: 'Total Landbank Terkumpul', val: '5.420 Hektar (Massive)' },
+                { label: 'Revenue Backlog Terjamin', val: 'Rp 12,6 Triliun (Secured)' },
+                { label: 'Take-Up Rate Kawasan', val: '86.4% (Optimal)' },
+                { label: 'Net Gearing Ratio', val: '0.24x (Sangat Sehat)' }
+            ],
+            qualitative: {
+                auditor: 'Wajar Tanpa Pengecualian (WTP)',
+                governance: 'Sertifikasi HGB murni entitas grup, bebas sengketa lahan konsesi',
+                guidance: 'Peluncuran township baru 300 Ha & ekspansi waterfront city'
+            },
+            valuation: {
+                fairValue: 'Rp 18.500 / saham',
+                marketPrice: 'Rp 14.900',
+                mos: '+24.1%',
+                signal: '🟢 UNDERVALUED (Growth Play)'
+            }
+        },
+        'energy': {
+            name: 'Energi & Utilitas',
+            tickers: 'PGEO, MEDC, ESSA, ENRG',
+            status: '● 3-Layer Verified (PLN PPA/BEI)',
+            agents: ['🔍 IDX Scraper', '📄 PPA Extractor', '⚡ Energy Specialist', '📈 3-Stage DCF', '⚠️ Sovereign Risk Sign'],
+            core: {
+                rev: 'USD 428 Juta (+6.8% YoY)',
+                profit: 'USD 163 Juta (+12.4% YoY)',
+                fcf: 'USD 215 Juta (+8.9%)'
+            },
+            kpis: [
+                { label: 'Kapasitas Terpasang Total', val: '1.877 MW (Dominant)' },
+                { label: 'Capacity Factor Operasional', val: '97.2% (World-Class)' },
+                { label: 'Tarif PPA Listrik/Uap', val: 'USD 0.076 / kWh (Hedged)' },
+                { label: 'Sisa Durasi Kontrak PPA', val: '28 Tahun (Long-Term Annuity)' },
+                { label: 'EBITDA Margin', val: '83.5% (High Margin)' }
+            ],
+            qualitative: {
+                auditor: 'Wajar Tanpa Pengecualian (WTP)',
+                governance: 'Sovereign Guarantee pemerintah atas kontrak pasokan uap PLN',
+                guidance: 'Eksplorasi sumur baru 55 MW COD on track kuartal depan'
+            },
+            valuation: {
+                fairValue: 'Rp 1.480 / saham',
+                marketPrice: 'Rp 1.190',
+                mos: '+24.3%',
+                signal: '🟢 UNDERVALUED (Clean Energy)'
+            }
+        },
+        'telco': {
+            name: 'Telekomunikasi & Cloud',
+            tickers: 'TLKM, ISAT, EXCL, TOWR',
+            status: '● 3-Layer Verified (Kominfo/BEI)',
+            agents: ['🔍 IDX Scraper', '📄 ARPU Extractor', '📡 Telco Specialist', '📈 Multiples DCF', '⚠️ CapEx Auditor Sign'],
+            core: {
+                rev: 'Rp 151,2 Triliun (+4.1% YoY)',
+                profit: 'Rp 24,9 Triliun (+3.8% YoY)',
+                fcf: 'Rp 38,4 Triliun (+6.2%)'
+            },
+            kpis: [
+                { label: 'Blended ARPU Seluler', val: 'Rp 48.500 / bln (Rising)' },
+                { label: 'Total Pelanggan Broadband', val: '162 Juta Pelanggan (Huge)' },
+                { label: 'Tenancy Ratio Menara', val: '1.89x (Optimal)' },
+                { label: 'Jangkauan Fiber Optic', val: '178.000 Km (Nationwide)' },
+                { label: 'EBITDA Margin', val: '51.8% (Solid)' }
+            ],
+            qualitative: {
+                auditor: 'Wajar Tanpa Pengecualian (WTP)',
+                governance: 'BHP spektrum frekuensi telah dibayar tuntas, merger tower efisien',
+                guidance: 'Monetisasi data center hyperscale & roll-out B2B AI cloud'
+            },
+            valuation: {
+                fairValue: 'Rp 4.250 / saham',
+                marketPrice: 'Rp 3.120',
+                mos: '+36.2%',
+                signal: '🟢 UNDERVALUED (Defensive Value)'
+            }
+        }
+    };
+
+    const sectorBtns = document.querySelectorAll('.swarm-sector-btn');
+    if (sectorBtns.length > 0) {
+        sectorBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sectorBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const sectorKey = btn.dataset.sector;
+                const d = swarmSectorData[sectorKey];
+                if (!d) return;
+
+                // Update UI elements
+                const tickersEl = document.getElementById('swarm-tickers');
+                const revEl = document.getElementById('swarm-core-rev');
+                const profitEl = document.getElementById('swarm-core-profit');
+                const fcfEl = document.getElementById('swarm-core-fcf');
+                const kpiListEl = document.getElementById('swarm-kpi-list');
+                const qualEl = document.getElementById('swarm-qual-content');
+                const fairEl = document.getElementById('swarm-val-fair');
+                const marketEl = document.getElementById('swarm-val-market');
+                const mosEl = document.getElementById('swarm-val-mos');
+                const signalEl = document.getElementById('swarm-val-signal');
+                const relayEl = document.getElementById('swarm-relay-container');
+                const badgeEl = document.getElementById('swarm-active-badge');
+
+                if (tickersEl) tickersEl.textContent = d.tickers;
+                if (revEl) revEl.textContent = d.core.rev;
+                if (profitEl) profitEl.textContent = d.core.profit;
+                if (fcfEl) fcfEl.textContent = d.core.fcf;
+                if (badgeEl) badgeEl.textContent = d.status;
+
+                if (kpiListEl) {
+                    kpiListEl.innerHTML = d.kpis.map(k => 
+                        `<div class="swarm-kpi-row"><span class="swarm-kpi-label">${k.label}:</span><span class="swarm-kpi-val">${k.val}</span></div>`
+                    ).join('');
+                }
+
+                if (qualEl) {
+                    qualEl.innerHTML = `
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Opini Auditor:</strong> ${d.qualitative.auditor}</p>
+                        <p style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Governance:</strong> ${d.qualitative.governance}</p>
+                        <p style="margin: 0;"><strong style="color: var(--text-primary);">Guidance Manajemen:</strong> ${d.qualitative.guidance}</p>
+                    `;
+                }
+
+                if (fairEl) fairEl.textContent = d.valuation.fairValue;
+                if (marketEl) marketEl.textContent = d.valuation.marketPrice;
+                if (mosEl) mosEl.innerHTML = `<i class="bi bi-shield-shaded"></i> Margin of Safety (MOS): ${d.valuation.mos}`;
+                if (signalEl) signalEl.textContent = d.valuation.signal;
+
+                if (relayEl) {
+                    relayEl.innerHTML = d.agents.map((ag, idx) => 
+                        `<span class="swarm-agent-tag"${idx === d.agents.length - 1 ? ' style="border-color: rgba(245, 158, 11, 0.4); color: #f59e0b;"' : ''}>${ag}</span>` +
+                        (idx < d.agents.length - 1 ? '<span style="color: var(--text-secondary); font-size: 0.7rem;">➔</span>' : '')
+                    ).join(' ');
+                }
+            });
+        });
+    }
+
+});
+
 })();

@@ -35,10 +35,10 @@
         <!-- Hero Section -->
         <header class="hero" id="about">
             <div class="hero-content">
-                <div class="hero-subtitle">Software Engineer & System Analyst</div>
+                <div class="hero-subtitle">System Analyst, Software Engineer & AI Swarm Architect</div>
                 <h1 class="hero-title">Merancang Sistem Modern dengan <span class="gradient-text">Kode & Data</span></h1>
                 <p class="hero-description">
-                    Halo! Saya <strong>Muhammad Riszky Wibowo</strong> (<code>anYoneo</code>). Saya berfokus merancang aplikasi yang aman, teruji, dan mudah dipelihara. Berpengalaman membangun backend dengan <strong>NestJS</strong>, <strong>Laravel</strong> & <strong>Express.js</strong>, frontend <strong>React</strong>, serta pengolahan data menggunakan <strong>Python</strong>.
+                    Halo! Saya <strong>Muhammad Riszky Wibowo</strong> (<code>anYoneo</code>). Saya berfokus merancang aplikasi enterprise yang aman, teruji, dan sistem multi-agen AI otonom. Berpengalaman membangun backend dengan <strong>NestJS</strong>, <strong>Laravel</strong> & <strong>Express.js</strong>, orkestrasi <strong>Autonomous AI Swarm</strong>, serta analisis data keuangan bursa & perancangan basis data menggunakan <strong>Python</strong>.
                 </p>
                 <div style="display: flex; gap: 1rem;">
                     <a href="#projects" class="btn-primary">
@@ -140,7 +140,10 @@
             <div class="showcase-container">
                 <!-- Tabs Menu -->
                 <div class="showcase-menu">
-                    <button class="showcase-tab active" data-target="verimatch">
+                    <button class="showcase-tab active" data-target="alphadigest">
+                        <i class="bi bi-cpu-fill" style="color: #f59e0b;"></i> AlphaDigest Swarm
+                    </button>
+                    <button class="showcase-tab" data-target="verimatch">
                         <i class="bi bi-shield-check"></i> VeriMatch Enterprise
                     </button>
                     <button class="showcase-tab" data-target="psb">
@@ -240,8 +243,170 @@ Catatan kecil: coba ketik "kopi" atau "deadline" di sini — node di memory grap
                     </div>
 
 
-                    <!-- Tab 0: VeriMatch Enterprise -->
-                    <div class="tab-pane active" id="verimatch">
+                    
+                    <!-- Tab 0: AlphaDigest Swarm (Featured Flagship) -->
+                    <div class="tab-pane active" id="alphadigest">
+                        <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+                                    <span style="font-size: 0.75rem; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); padding: 0.2rem 0.6rem; border-radius: 6px; font-weight: 700; text-transform: uppercase;">Flagship Project</span>
+                                    <span style="font-size: 0.75rem; background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.2rem 0.6rem; border-radius: 6px; font-weight: 600;">Autonomous Multi-Agent</span>
+                                </div>
+                                <h4>🦅 AlphaDigest — Autonomous IDX Financial Intelligence Swarm</h4>
+                                <p class="text-secondary" style="font-size: 0.9rem;">
+                                    Sistem orkestrasi 8 agen AI otonom untuk analisis laporan keuangan BEI (IDX). Memadukan ekstraksi 3-layer bebas halusinasi, adaptivitas 10 sektor bisnis, kalkulasi valuasi 3-Stage DCF, dan integrasi Obsidian Second Brain. 
+                                    <a href="https://github.com/anYoneo/alphadigest-idx" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Lihat Repository GitHub</a>
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem;">
+                                <a href="https://github.com/anYoneo/alphadigest-idx" target="_blank" class="btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #f59e0b, #38bdf8); border: none;">
+                                    <i class="bi bi-github"></i> Repository GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 4 Stat Counters -->
+                        <div class="swarm-stats-grid">
+                            <div class="swarm-stat-box">
+                                <div class="label">Autonomous Personas</div>
+                                <div class="val" style="color: #f59e0b;">8 Agen</div>
+                            </div>
+                            <div class="swarm-stat-box">
+                                <div class="label">Sektor Bisnis Adaptif</div>
+                                <div class="val" style="color: var(--accent-blue);">10 Sektor</div>
+                            </div>
+                            <div class="swarm-stat-box">
+                                <div class="label">Framework Ekstraksi</div>
+                                <div class="val" style="color: var(--accent-purple);">3-Layer</div>
+                            </div>
+                            <div class="swarm-stat-box">
+                                <div class="label">Zero Hallucination</div>
+                                <div class="val" style="color: var(--accent-green);">100% Strict</div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Swarm Console -->
+                        <div class="swarm-hero-card">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                                <div>
+                                    <span style="font-size: 0.85rem; font-weight: 700; color: #f59e0b; text-transform: uppercase; letter-spacing: 1px;">
+                                        <i class="bi bi-cpu-fill"></i> Live Swarm Sector Inspector
+                                    </span>
+                                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">Pilih sektor untuk melihat adaptasi skema KPI dan hasil kerja relay agen secara real-time:</p>
+                                </div>
+                                <div id="swarm-active-badge" style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.25rem 0.7rem; border-radius: 20px; font-weight: 600;">
+                                    ● 3-Layer Verified
+                                </div>
+                            </div>
+
+                            <!-- Sector Switcher Navigation -->
+                            <div class="swarm-selector-nav" style="margin-bottom: 1rem;">
+                                <button class="swarm-sector-btn active" data-sector="banking">
+                                    <i class="bi bi-bank2"></i> 💳 Perbankan & Multifinance
+                                </button>
+                                <button class="swarm-sector-btn" data-sector="mining">
+                                    <i class="bi bi-gem"></i> ⛏️ Pertambangan & Logam
+                                </button>
+                                <button class="swarm-sector-btn" data-sector="property">
+                                    <i class="bi bi-building"></i> 🏢 Properti & Kawasan
+                                </button>
+                                <button class="swarm-sector-btn" data-sector="energy">
+                                    <i class="bi bi-lightning-charge"></i> ⚡ Energi & Utilitas
+                                </button>
+                                <button class="swarm-sector-btn" data-sector="telco">
+                                    <i class="bi bi-broadcast"></i> 📡 Telekomunikasi & Cloud
+                                </button>
+                            </div>
+
+                            <!-- Agents Relay Pipeline Indicator -->
+                            <div class="swarm-agents-relay" style="margin-bottom: 1.25rem;">
+                                <span style="color: var(--text-secondary); font-size: 0.75rem; font-weight: 600;">Active Pipeline Relay:</span>
+                                <div id="swarm-relay-container" style="display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center;">
+                                    <span class="swarm-agent-tag">🔍 IDX Scraper</span>
+                                    <span style="color: var(--text-secondary); font-size: 0.7rem;">➔</span>
+                                    <span class="swarm-agent-tag">📄 3-Layer Extractor</span>
+                                    <span style="color: var(--text-secondary); font-size: 0.7rem;">➔</span>
+                                    <span class="swarm-agent-tag">📊 Bank Summarizer</span>
+                                    <span style="color: var(--text-secondary); font-size: 0.7rem;">➔</span>
+                                    <span class="swarm-agent-tag">📈 3-Stage DCF</span>
+                                    <span style="color: var(--text-secondary); font-size: 0.7rem;">➔</span>
+                                    <span class="swarm-agent-tag" style="border-color: rgba(245, 158, 11, 0.4); color: #f59e0b;">⚠️ Risk & QC Sign</span>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Sector Matrix -->
+                            <div class="swarm-matrix-grid">
+                                <!-- Left Column: Core Financials & Adaptive KPIs -->
+                                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                    <!-- Layer 1 -->
+                                    <div class="swarm-card-inner">
+                                        <h5><i class="bi bi-table"></i> Layer 1: Core Financials (<span id="swarm-tickers">BBCA, BBRI, BMRI</span>)</h5>
+                                        <div class="swarm-kpi-row">
+                                            <span class="swarm-kpi-label">Pendapatan / Net Revenue:</span>
+                                            <span class="swarm-kpi-val" id="swarm-core-rev">Rp 112,4 Triliun (+12.4% YoY)</span>
+                                        </div>
+                                        <div class="swarm-kpi-row">
+                                            <span class="swarm-kpi-label">Laba Bersih Konsolidasian:</span>
+                                            <span class="swarm-kpi-val" id="swarm-core-profit">Rp 54,8 Triliun (+14.1% YoY)</span>
+                                        </div>
+                                        <div class="swarm-kpi-row">
+                                            <span class="swarm-kpi-label">Arus Kas Operasional Bersih:</span>
+                                            <span class="swarm-kpi-val" id="swarm-core-fcf">Rp 68,2 Triliun (+9.8%)</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Layer 2: Dynamic Sector KPIs -->
+                                    <div class="swarm-card-inner">
+                                        <h5><i class="bi bi-sliders"></i> Layer 2: Adaptive Sektoral KPIs</h5>
+                                        <div id="swarm-kpi-list">
+                                            <div class="swarm-kpi-row"><span class="swarm-kpi-label">Net Interest Margin (NIM):</span><span class="swarm-kpi-val">5.8% (Optimal)</span></div>
+                                            <div class="swarm-kpi-row"><span class="swarm-kpi-label">NPL Gross / Net:</span><span class="swarm-kpi-val">1.9% / 0.6% (Sehat)</span></div>
+                                            <div class="swarm-kpi-row"><span class="swarm-kpi-label">CASA Ratio:</span><span class="swarm-kpi-val">81.4% (Tinggi)</span></div>
+                                            <div class="swarm-kpi-row"><span class="swarm-kpi-label">Capital Adequacy (CAR):</span><span class="swarm-kpi-val">27.3% (Sangat Kuat)</span></div>
+                                            <div class="swarm-kpi-row"><span class="swarm-kpi-label">Cost of Funds (CoF):</span><span class="swarm-kpi-val">2.1% (Efisien)</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column: Layer 3 Qualitative & Valuation Engine -->
+                                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                    <!-- Layer 3 -->
+                                    <div class="swarm-card-inner">
+                                        <h5><i class="bi bi-shield-check"></i> Layer 3: Qualitative & Governance</h5>
+                                        <div style="font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary);" id="swarm-qual-content">
+                                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Opini Auditor:</strong> Wajar Tanpa Pengecualian (WTP) - Big 4</p>
+                                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Governance & CKPN:</strong> Model ECL PSAK 71 memadai, Coverage ratio > 220%</p>
+                                            <p style="margin: 0;"><strong style="color: var(--text-primary);">Guidance Manajemen:</strong> Target loan growth 10-12%, payout dividen 70%+</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Valuation Engine Output -->
+                                    <div class="swarm-val-box">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">Valuation Engine (DCF + Multiples)</span>
+                                            <span id="swarm-val-signal" class="swarm-val-signal">🟢 UNDERVALUED</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.25rem;">
+                                            <div>
+                                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Blended Fair Value</div>
+                                                <div style="font-size: 1.4rem; font-weight: 800; font-family: 'Outfit'; color: var(--accent-blue);" id="swarm-val-fair">Rp 11.200 / saham</div>
+                                            </div>
+                                            <div style="text-align: right;">
+                                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Harga Pasar Saat Ini</div>
+                                                <div style="font-size: 1.1rem; font-weight: 700; font-family: 'Outfit'; color: var(--text-primary);" id="swarm-val-market">Rp 9.850</div>
+                                            </div>
+                                        </div>
+                                        <div style="font-size: 0.8rem; color: var(--accent-green); font-weight: 600; display: flex; align-items: center; gap: 0.4rem;" id="swarm-val-mos">
+                                            <i class="bi bi-shield-shaded"></i> Margin of Safety (MOS): +13.7%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 1: VeriMatch Enterprise -->
+                    <div class="tab-pane" id="verimatch">
                         <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
                             <div>
                                 <h4>⚡ VeriMatch Enterprise — AP Intelligence & Financial Control</h4>
