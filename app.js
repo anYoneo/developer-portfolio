@@ -1,4 +1,4 @@
-// Developer Portfolio Interactive Features
+﻿// Developer Portfolio Interactive Features
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Tab Switching Logic
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-                    {
             keywords: ['alphadigest', 'swarm', 'saham', 'idx', 'bei', 'agen', 'financial', 'dcf', 'investasi'],
             responses: [
                 "AlphaDigest adalah Autonomous IDX Financial Intelligence Swarm buatan Riszky: 8 agen AI spesialis yang memantau & menganalisis laporan keuangan BEI secara adaptif (10 sektor), valuasi DCF 3-stage, dan integrasi Obsidian.",
@@ -709,3 +708,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 })();
+

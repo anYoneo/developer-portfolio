@@ -1,4 +1,4 @@
-/* Custom Modern Styling for Developer Portfolio */
+﻿/* Custom Modern Styling for Developer Portfolio */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap');
 
 :root {
@@ -289,13 +289,18 @@ nav {
 /* Tabs or Showcase Layout */
 .showcase-container {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 3rem;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 2rem;
     background: var(--bg-card);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .showcase-menu {
@@ -339,14 +344,23 @@ nav {
 
 .showcase-content {
     min-height: 450px;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow: visible;
 }
 
 .tab-pane {
     display: none;
-    animation: fadeIn 0.4s ease-in-out forwards;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    animation: fadeIn 0.35s ease-in-out forwards;
 }
 
 .tab-pane.active {
@@ -1114,3 +1128,4 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
