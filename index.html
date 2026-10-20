@@ -34,7 +34,13 @@
         </nav>
 
         <!-- Hero Section -->
-        <header class="hero" id="about">
+        <header class="hero hero-stagger" id="about">
+            <div class="hero-aurora" aria-hidden="true">
+                <span class="aurora-blob b1"></span>
+                <span class="aurora-blob b2"></span>
+                <span class="aurora-blob b3"></span>
+            </div>
+
             <div class="hero-content">
                 <div class="hero-subtitle">System Analyst & AI Engineer</div>
                 <h1 class="hero-title">Merancang Sistem Modern dengan <span class="gradient-text">Kode & Data</span></h1>
@@ -42,13 +48,13 @@
                     Halo! Saya <strong>Muhammad Riszky Wibowo</strong> (<code>anYoneo</code>). Saya berfokus merancang aplikasi enterprise yang aman, teruji, dan sistem multi-agen AI otonom. Berpengalaman membangun backend dengan <strong>NestJS</strong>, <strong>Laravel</strong> & <strong>Express.js</strong>, orkestrasi <strong>Autonomous AI Swarm</strong>, serta analisis data keuangan bursa & perancangan basis data menggunakan <strong>Python</strong>.
                 </p>
                 <div class="hero-tech">
-                    <span class="tech-chip"><i class="bi bi-hexagon-fill"></i> NestJS</span>
-                    <span class="tech-chip"><i class="bi bi-filetype-php"></i> Laravel</span>
-                    <span class="tech-chip"><i class="bi bi-node-plus-fill"></i> Express</span>
-                    <span class="tech-chip"><i class="bi bi-filetype-py"></i> Python</span>
-                    <span class="tech-chip"><i class="bi bi-database-fill"></i> PostgreSQL</span>
-                    <span class="tech-chip"><i class="bi bi-box-seam-fill"></i> Docker</span>
-                    <span class="tech-chip"><i class="bi bi-git-branch"></i> CI/CD</span>
+                    <span class="tech-chip" style="animation-delay:.15s"><i class="bi bi-hexagon-fill"></i> NestJS</span>
+                    <span class="tech-chip" style="animation-delay:.22s"><i class="bi bi-filetype-php"></i> Laravel</span>
+                    <span class="tech-chip" style="animation-delay:.29s"><i class="bi bi-node-plus-fill"></i> Express</span>
+                    <span class="tech-chip" style="animation-delay:.36s"><i class="bi bi-filetype-py"></i> Python</span>
+                    <span class="tech-chip" style="animation-delay:.43s"><i class="bi bi-database-fill"></i> PostgreSQL</span>
+                    <span class="tech-chip" style="animation-delay:.5s"><i class="bi bi-box-seam-fill"></i> Docker</span>
+                    <span class="tech-chip" style="animation-delay:.57s"><i class="bi bi-git-branch"></i> CI/CD</span>
                 </div>
                 <div style="display: flex; gap: 1rem;">
                     <a href="#projects" class="btn-primary">
@@ -64,8 +70,8 @@
                 <div class="avatar-wrapper">
                     <div class="avatar-inner">
                         <div class="terminal-window">
-                            <div class="terminal-bar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="terminal-title">riszky@dev</span></div>
-                            <div class="terminal-body"><span class="term-prompt">$</span> <span id="typed-line">building the future…</span><span class="term-caret"></span></div>
+                            <div class="terminal-bar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="terminal-title">riszky@dev — zsh</span></div>
+                            <div class="terminal-body" id="term-body"></div>
                         </div>
                         <span class="avatar-handle">anYoneo</span>
                         <small class="avatar-status"><span class="status-dot"></span> Active Session</small>
@@ -73,6 +79,18 @@
                 </div>
             </div>
         </header>
+
+        <!-- Tech Marquee -->
+        <div class="tech-marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span class="mq-set">
+                    NestJS <i class="bi bi-asterisk"></i> Laravel 11 <i class="bi bi-asterisk"></i> Express.js <i class="bi bi-asterisk"></i> Python <i class="bi bi-asterisk"></i> PostgreSQL <i class="bi bi-asterisk"></i> MySQL <i class="bi bi-asterisk"></i> Docker <i class="bi bi-asterisk"></i> GitHub Actions <i class="bi bi-asterisk"></i> React <i class="bi bi-asterisk"></i> TypeScript <i class="bi bi-asterisk"></i> Flask <i class="bi bi-asterisk"></i> NLTK <i class="bi bi-asterisk"></i> Keras <i class="bi bi-asterisk"></i>
+                </span>
+                <span class="mq-set">
+                    NestJS <i class="bi bi-asterisk"></i> Laravel 11 <i class="bi bi-asterisk"></i> Express.js <i class="bi bi-asterisk"></i> Python <i class="bi bi-asterisk"></i> PostgreSQL <i class="bi bi-asterisk"></i> MySQL <i class="bi bi-asterisk"></i> Docker <i class="bi bi-asterisk"></i> GitHub Actions <i class="bi bi-asterisk"></i> React <i class="bi bi-asterisk"></i> TypeScript <i class="bi bi-asterisk"></i> Flask <i class="bi bi-asterisk"></i> NLTK <i class="bi bi-asterisk"></i> Keras <i class="bi bi-asterisk"></i>
+                </span>
+            </div>
+        </div>
 
         <!-- Engineering Standards Section -->
         <section class="interactive-section">

@@ -12,33 +12,83 @@
 
   docReady(function () {
 
-    /* ---------- 1. Hero typewriter ---------- */
-    var typed = document.getElementById('typed-line');
-    if (typed) {
-      var phrases = [
-        'building the future…',
-        'npm run deploy',
-        'nest ~ building APIs',
-        'docker compose up -d',
-        'python analyze.py',
-        'swarm.agents.dispatch()'
+    /* ---------- 1. Terminal boot log (complex, sequential lines) ---------- */
+    var termBody = document.getElementById('term-body');
+    if (termBody) {
+      var bootScript = [
+        { t: 'cmd',  s: 'npm run dev' },
+        { t: 'ok',   s: '✓ backend ready on :3000 (NestJS)' },
+        { t: 'ok',   s: '✓ database connected (PostgreSQL)' },
+        { t: 'info', s: '→ swarm.agents.dispatch() [8 agents]' },
+        { t: 'info', s: '→ analyzing IDX financials (10 sectors)' },
+        { t: 'warn', s: '⚠ 3-layer extraction: 100% strict' },
+        { t: 'ok',   s: '✓ deploy pipeline passed (CI/CD)' },
+        { t: 'cmd',  s: 'git push origin main' },
+        { t: 'ok',   s: '✓ up to date — portfolio live' }
       ];
-      var pi = 0, ci = 0, deleting = false;
-      var TICK = 55, PAUSE = 1600;
+      var li = 0, bi = 0, running = true;
+      var cursor = null;
 
-      (function typeLoop() {
-        var phrase = phrases[pi];
-        if (!deleting) {
-          ci++;
-          typed.textContent = phrase.slice(0, ci);
-          if (ci === phrase.length) { deleting = true; setTimeout(typeLoop, PAUSE); return; }
-        } else {
-          ci--;
-          typed.textContent = phrase.slice(0, ci);
-          if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+      function makeCursor() {
+        cursor = document.createElement('span');
+        cursor.className = 'term-cursor';
+        cursor.textContent = '▋';
+        return cursor;
+      }
+
+      function reset() {
+        termBody.innerHTML = '';
+        cursor = null;
+        li = 0; bi = 0;
+      }
+
+      function typeCommand(line, chars) {
+        if (chars.length === 0) return;
+        var t = line.querySelector('.t-text');
+        t.textContent = chars[0];
+        for (var i = 1; i < chars.length; i++) {
+          (function (ch) { setTimeout(function () { t.textContent += ch; }, i * 28); })(chars[i]);
         }
-        setTimeout(typeLoop, deleting ? 28 : TICK);
-      })();
+      }
+
+      function step() {
+        if (!running) return;
+        if (li >= bootScript.length) {
+          /* pause, then re-run the whole log for an endless live feel */
+          setTimeout(function () {
+            if (!running) return;
+            reset();
+            step();
+          }, 2600);
+          return;
+        }
+        var line = bootScript[li];
+        var el = document.createElement('div');
+        el.className = 'term-line t-' + line.t;
+        if (line.t === 'cmd') {
+          el.innerHTML = '<span class="t-prompt">$</span><span class="t-text"></span>';
+          termBody.appendChild(el);
+          typeCommand(el, line.s);
+          var totalCmd = (line.s.length * 28) + 180;
+          setTimeout(function () { if (running) step(); }, totalCmd);
+        } else {
+          el.textContent = line.s;
+          termBody.appendChild(el);
+          el.style.animationDelay = '0s';
+          setTimeout(function () { if (running) step(); }, 300);
+        }
+        /* keep the latest command line visible with a live cursor */
+        var old = termBody.querySelector('.term-cursor');
+        if (old) old.remove();
+        makeCursor().style.cssText = 'margin-left:4px';
+        el.appendChild(cursor);
+        li++;
+      }
+
+      step();
+      document.addEventListener('visibilitychange', function () {
+        running = document.visibilityState === 'visible';
+      });
     }
 
     /* ---------- 2. Scroll reveal + section-rule sweep ---------- */
