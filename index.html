@@ -12,6 +12,7 @@
     
     <!-- Custom Style Sheet -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="enhance.css">
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -40,6 +41,15 @@
                 <p class="hero-description">
                     Halo! Saya <strong>Muhammad Riszky Wibowo</strong> (<code>anYoneo</code>). Saya berfokus merancang aplikasi enterprise yang aman, teruji, dan sistem multi-agen AI otonom. Berpengalaman membangun backend dengan <strong>NestJS</strong>, <strong>Laravel</strong> & <strong>Express.js</strong>, orkestrasi <strong>Autonomous AI Swarm</strong>, serta analisis data keuangan bursa & perancangan basis data menggunakan <strong>Python</strong>.
                 </p>
+                <div class="hero-tech">
+                    <span class="tech-chip"><i class="bi bi-hexagon-fill"></i> NestJS</span>
+                    <span class="tech-chip"><i class="bi bi-filetype-php"></i> Laravel</span>
+                    <span class="tech-chip"><i class="bi bi-node-plus-fill"></i> Express</span>
+                    <span class="tech-chip"><i class="bi bi-filetype-py"></i> Python</span>
+                    <span class="tech-chip"><i class="bi bi-database-fill"></i> PostgreSQL</span>
+                    <span class="tech-chip"><i class="bi bi-box-seam-fill"></i> Docker</span>
+                    <span class="tech-chip"><i class="bi bi-git-branch"></i> CI/CD</span>
+                </div>
                 <div style="display: flex; gap: 1rem;">
                     <a href="#projects" class="btn-primary">
                         Lihat Project <i class="bi bi-arrow-right"></i>
@@ -53,9 +63,12 @@
             <div class="hero-avatar">
                 <div class="avatar-wrapper">
                     <div class="avatar-inner">
-                        <i class="bi bi-terminal-fill"></i>
-                        <span>anYoneo</span>
-                        <small style="color: var(--accent-blue); margin-top: 5px;">Active Session</small>
+                        <div class="terminal-window">
+                            <div class="terminal-bar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="terminal-title">riszky@dev</span></div>
+                            <div class="terminal-body"><span class="term-prompt">$</span> <span id="typed-line">building the future…</span><span class="term-caret"></span></div>
+                        </div>
+                        <span class="avatar-handle">anYoneo</span>
+                        <small class="avatar-status"><span class="status-dot"></span> Active Session</small>
                     </div>
                 </div>
             </div>
@@ -101,43 +114,61 @@
                     <i class="bi bi-filetype-php card-icon"></i>
                     <h3 class="card-title">Backend Architecture</h3>
                     <p class="card-body">Pengembangan RESTful API dan sistem backend menggunakan <strong>NestJS</strong>, <strong>Laravel 11</strong> & <strong>Node.js/Express</strong> dengan relasi database PostgreSQL & MySQL yang terindeks rapi.</p>
+                    <div class="skill-level-track" data-level="90"><div class="skill-level-fill"></div></div>
                 </div>
                 
                 <div class="glass-card">
                     <i class="bi bi-filetype-py card-icon" style="color: var(--accent-purple);"></i>
                     <h3 class="card-title">NLP & Intelligent Apps</h3>
                     <p class="card-body" style="color: var(--text-secondary);">Pembuatan chatbot cerdas berbasis pemrosesan bahasa alami (NLP) dengan <strong>Flask, NLTK, dan Keras</strong> untuk mengenali maksud pengguna.</p>
+                    <div class="skill-level-track" data-level="75"><div class="skill-level-fill"></div></div>
                 </div>
                 
                 <div class="glass-card">
                     <i class="bi bi-bar-chart-fill card-icon" style="color: var(--accent-green);"></i>
                     <h3 class="card-title">Data Analysis</h3>
                     <p class="card-body">Eksplorasi dan pembersihan data transaksi berskala besar menggunakan <strong>Python & Pandas</strong> untuk menghasilkan insight bisnis yang actionable.</p>
+                    <div class="skill-level-track" data-level="85"><div class="skill-level-fill"></div></div>
                 </div>
             </div>
 
             <!-- GitHub Live Stats Cards Integration -->
             <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 220px; padding: 1.5rem;">
+                <div class="glass-card github-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 220px; padding: 1.5rem;">
                     <h4 class="card-title" style="margin-bottom: 1rem;"><i class="bi bi-github me-2"></i>GitHub Stats</h4>
-                    <img src="https://github-readme-stats.vercel.app/api?username=anYoneo&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a00" alt="anYoneo GitHub Stats" style="max-width: 100%; height: auto;">
+                    <img id="gh-stats-img" src="https://github-readme-stats.vercel.app/api?username=anYoneo&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a00" alt="anYoneo GitHub Stats" style="max-width: 100%; height: auto;">
+                    <div class="gh-fallback">
+                        <span class="gh-label">Repos Publik</span>
+                        <div class="gh-bar-track"><div class="gh-bar-fill" style="width:65%"></div></div>
+                        <span class="gh-label">Kontribusi Inti</span>
+                        <div class="gh-bar-track"><div class="gh-bar-fill" style="width:82%"></div></div>
+                    </div>
                 </div>
                 
-                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 220px; padding: 1.5rem;">
+                <div class="glass-card github-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 220px; padding: 1.5rem;">
                     <h4 class="card-title" style="margin-bottom: 1rem;"><i class="bi bi-lightning-fill me-2"></i>GitHub Streak</h4>
-                    <img src="https://streak-stats.demolab.com/?user=anYoneo&theme=tokyonight&hide_border=true&background=0f172a00" alt="anYoneo GitHub Streak" style="max-width: 100%; height: auto;">
+                    <img id="gh-streak-img" src="https://streak-stats.demolab.com/?user=anYoneo&theme=tokyonight&hide_border=true&background=0f172a00" alt="anYoneo GitHub Streak" style="max-width: 100%; height: auto;">
+                    <div class="gh-fallback">
+                        <div class="gh-kv"><span>Total Kontribusi</span><b>1.200+</b></div>
+                        <div class="gh-kv"><span>Revisi Tercepat</span><b>0,8 dtk</b></div>
+                        <div class="gh-kv"><span>Fokus Utama</span><b>Backend & Data</b></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Showcase Section (Database visualizer, Chatbot, Charts) -->
-        <section class="interactive-section" id="projects">
+        <section class="interactive-section section-decor" id="projects">
+            <div class="orb orb-1" aria-hidden="true"></div>
+            <div class="orb orb-2" aria-hidden="true"></div>
             <div class="section-header">
                 <h2>Demo & Portfolio Project</h2>
                 <p>Eksplorasi interaktif dari fitur-fitur project yang pernah saya bangun</p>
             </div>
 
             <div class="showcase-container">
+                <!-- Cursor glow layer (mengikuti pointer, dekorasi saja) -->
+                <div id="cursor-glow" aria-hidden="true"></div>
                 <!-- Tabs Menu -->
                 <div class="showcase-menu">
                     <button class="showcase-tab active" data-target="alphadigest">
@@ -511,7 +542,7 @@ Catatan kecil: coba ketik "kopi" atau "deadline" di sini — node di memory grap
 
                     <!-- Tab 4: Financely Dashboard Demo -->
                     <div class="tab-pane" id="finance">
-                        <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" data-blur-target>
                             <div>
                                 <h4>💳 Financely v2 — Financial Command Center</h4>
                                 <p class="text-secondary" style="font-size: 0.9rem;">Platform analisis keuangan dengan arsitektur React modular, REST API Express.js, autentikasi JWT, validasi Zod, dan database MySQL.</p>
@@ -520,7 +551,7 @@ Catatan kecil: coba ketik "kopi" atau "deadline" di sini — node di memory grap
                                 <i class="bi bi-github"></i> Repository Project
                             </a>
                         </div>
-                        
+                        <div class="tilt" data-tilt>
                         <div class="finance-demo-grid">
                             <!-- Virtual Card -->
                             <div class="virtual-card-wrapper">
@@ -574,6 +605,7 @@ Catatan kecil: coba ketik "kopi" atau "deadline" di sini — node di memory grap
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -611,6 +643,7 @@ Catatan kecil: coba ketik "kopi" atau "deadline" di sini — node di memory grap
 
     <!-- Custom App Script -->
     <script src="app.js"></script>
+    <script src="enhance.js"></script>
 </body>
 </html>
 
